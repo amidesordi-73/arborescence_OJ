@@ -639,8 +639,8 @@ kbd{
               </div>
               <div class="mock-body tree-mini">
                 <div class="root">💻 Outdoor_Jadore</div>
-                <div>📁 01_CLIENTS</div><div style="padding-left:38px">📁 COMMANDES</div><div style="padding-left:38px">📁 FACTURES</div>
-                <div>📁 02_FOURNISSEURS</div><div>📁 03_RH</div><div>📁 04_COMMUNICATION</div>
+                <div>📁 CLIENTS</div><div style="padding-left:38px">📁 COMMANDES</div><div style="padding-left:38px">📁 FACTURES</div>
+                <div>📁 FOURNISSEURS</div><div>📁 RH</div><div>📁 COMMUNICATION</div>
               </div>
             </div>
             </div>
@@ -678,7 +678,7 @@ kbd{
           <div class="card">
             <div class="icon">📁</div>
             <h3>Dossier / sous-dossier</h3>
-            <p>Un dossier peut contenir d’autres dossiers. Exemple : <strong>01_CLIENTS › FACTURES</strong>.</p>
+            <p>Un dossier peut contenir d’autres dossiers. Exemple : <strong>CLIENTS › FACTURES</strong>.</p>
           </div>
           <div class="card">
             <div class="icon">📄</div>
@@ -698,18 +698,26 @@ kbd{
         <div class="course-grid">
           <div>
             <div class="example-tree">
-              <div>💻 <strong>Outdoor_Jadore</strong></div>
-              <div class="indent1">📁 01_CLIENTS</div><div class="indent2">📁 COMMANDES</div><div class="indent2">📁 FACTURES</div><div class="indent2">📁 RECLAMATIONS</div>
-              <div class="indent1">📁 02_FOURNISSEURS</div><div class="indent2">📁 DEVIS</div><div class="indent2">📁 FACTURES</div>
-              <div class="indent1">📁 03_RH</div><div class="indent2">📁 CONTRATS</div><div class="indent2">📁 PLANNINGS</div>
-              <div class="indent1">📁 04_COMMUNICATION</div><div class="indent2">📁 IMAGES</div><div class="indent2">📁 RESEAUX_SOCIAUX</div>
-              <div class="indent1">📁 05_ADMINISTRATIF</div><div class="indent2">📁 COURRIERS</div><div class="indent2">📁 PROCEDURES</div>
-              <div class="indent1">📁 06_ARCHIVES</div>
-            </div>
+              <div>💻 <strong>SERVICES OJ</strong></div>
+              <div class="indent1">📁 CABINET MEDICAL</div>
+              <div class="indent2">📁 CROPS</div>
+              <div class="indent2">📁 DOSSIERS PATIENTS</div>
+              <div class="indent2">📁 MODELES</div>
+				<div class="indent2">...</div>
+              <div class="indent1">📁 DIAPORAMA DES SERVICES</div>
+              <div class="indent2">📁 DEROULEMENT DU SERVICE ACHAT</div>
+              <div class="indent2">📁 DEROULEMENT DU SERVICE COMMUNICATION</div>
+			  <div class="indent2">📁 DEROULEMENT DU SERVICE COMPTABILITE</div>
+			  <div class="indent2">📁 DEROULEMENT DU SERVICE GRH</div>
+				<div class="indent2">...</div>
+              <div class="indent1">📁 SERVICE ACHAT</div>
+              <div class="indent2">📁 CATALOGUE FOURNISSEURS</div>
+              <div class="indent2">📁 OFFRES PROMOTIONNELLES</div>
+				<div class="indent2">...</div>
           </div>
           <div>
-            <p>Si l’on cherche la facture client n° 2026-081, on doit suivre la logique :</p>
-            <div class="path-example">Outdoor_Jadore › 01_CLIENTS › FACTURES › Facture_CLIENT_2026-081.pdf</div>
+            <p>Si l’on cherche la facture client n° FA00000589 du 09-09-2026, on doit suivre la logique :</p>
+            <div class="path-example">SERVICES OJ › SERVICE VENTE › FACTURES DE VENTE › AU PLAISIR DES YEUX › 2026 › 09-SEPTEMBRE › FA00000589.pdf</div>
             <div class="tip"><span>💡</span><div><strong>Le bon réflexe :</strong> se demander d’abord « à quelle grande famille appartient ce document ? », puis « quel sous-dossier décrit le mieux sa nature ? ».</div></div>
           </div>
         </div>
@@ -880,43 +888,41 @@ kbd{
 
 <script>
 const structure = [
-  {id:"clients-commandes",label:"COMMANDES",parent:"01_CLIENTS",level:2},
-  {id:"clients-factures",label:"FACTURES",parent:"01_CLIENTS",level:2},
-  {id:"clients-reclamations",label:"RECLAMATIONS",parent:"01_CLIENTS",level:2},
-  {id:"fournisseurs-devis",label:"DEVIS",parent:"02_FOURNISSEURS",level:2},
-  {id:"fournisseurs-factures",label:"FACTURES",parent:"02_FOURNISSEURS",level:2},
-  {id:"rh-contrats",label:"CONTRATS",parent:"03_RH",level:2},
-  {id:"rh-plannings",label:"PLANNINGS",parent:"03_RH",level:2},
-  {id:"com-images",label:"IMAGES",parent:"04_COMMUNICATION",level:2},
-  {id:"com-reseaux",label:"RESEAUX_SOCIAUX",parent:"04_COMMUNICATION",level:2},
-  {id:"admin-courriers",label:"COURRIERS",parent:"05_ADMINISTRATIF",level:2},
-  {id:"admin-procedures",label:"PROCEDURES",parent:"05_ADMINISTRATIF",level:2},
-  {id:"archives",label:"06_ARCHIVES",parent:null,level:1}
+  {id:"medical-dossiers",label:"DOSSIERS PATIENTS",parent:"CABINET MEDICAL",level:2},
+  {id:"medical-modeles",label:"MODELES",parent:"CABINET MEDICAL",level:2},
+  {id:"diapo-achat",label:"DEROULEMENT DU SERVICE ACHAT",parent:"DIAPORAMA DES SERVICES",level:2},
+  {id:"diapo-com",label:"DEROULEMENT DU SERVICE COMMUNICATION",parent:"DIAPORAMA DES SERVICES",level:2},
+  {id:"diapo-compta",label:"DEROULEMENT DU SERVICE COMPTABILITE",parent:"DIAPORAMA DES SERVICES",level:2},
+  {id:"diapo-grh",label:"DEROULEMENT DU SERVICE GRH",parent:"DIAPORAMA DES SERVICES",level:2},
+  {id:"achat-catalogue",label:"CATALOGUE FOURNISSEURS",parent:"SERVICE ACHAT",level:2},
+  {id:"achat-promos",label:"OFFRES PROMOTIONNELLES",parent:"SERVICE ACHAT",level:2},
+  {id:"vente-octobre",label:"10-OCTOBRE",parent:"SERVICE VENTE › FACTURES DE VENTE › L'OUTDOOR J'ADORE › 2026",level:2},
+  {id:"vente-septembre",label:"09-SEPTEMBRE",parent:"SERVICE VENTE › FACTURES DE VENTE › L'OUTDOOR J'ADORE › 2026",level:2}
 ];
-const parentOrder = ["01_CLIENTS","02_FOURNISSEURS","03_RH","04_COMMUNICATION","05_ADMINISTRATIF"];
+const parentOrder = ["CABINET MEDICAL","DIAPORAMA DES SERVICES","SERVICE ACHAT","SERVICE VENTE › FACTURES DE VENTE › L'OUTDOOR J'ADORE › 2026"];
 const trainingItems = [
-  {id:"t1",name:"Commande_CLI-104_Leroux.pdf",kind:"PDF",icon:"📄",target:"clients-commandes",why:"Une commande passée par un client appartient à 01_CLIENTS › COMMANDES."},
-  {id:"t2",name:"Facture_AlpSports_4587.pdf",kind:"PDF",icon:"📄",target:"fournisseurs-factures",why:"AlpSports est ici un fournisseur : sa facture se range dans 02_FOURNISSEURS › FACTURES."},
-  {id:"t3",name:"Planning_Accueil_Octobre.xlsx",kind:"Excel",icon:"📊",target:"rh-plannings",why:"Un planning du personnel relève de 03_RH › PLANNINGS."},
-  {id:"t4",name:"Photo_Vitrine_Automne.jpg",kind:"Image",icon:"🖼️",target:"com-images",why:"Une photo destinée à la communication se range dans 04_COMMUNICATION › IMAGES."},
-  {id:"t5",name:"Procedure_Accueil_Client.pdf",kind:"PDF",icon:"📘",target:"admin-procedures",why:"Une procédure interne se classe dans 05_ADMINISTRATIF › PROCEDURES."},
-  {id:"t6",name:"Dossier_Photos_Salon_Outdoor_2026",kind:"Dossier",icon:"📁",target:"com-images",why:"Un dossier contenant des photos va dans 04_COMMUNICATION › IMAGES."}
+  {id:"t1",name:"FA00002394.pdf",kind:"Facture de vente du 12/10/2026",icon:"📄",target:"vente-octobre",why:"La facture FA00002394 du 12 octobre 2026 suit le chemin SERVICE VENTE › FACTURES DE VENTE › L'OUTDOOR J'ADORE › 2026 › 10-OCTOBRE."},
+  {id:"t2",name:"Catalogue_Fournisseur_Montures_2026.pdf",kind:"Catalogue PDF",icon:"📄",target:"achat-catalogue",why:"Le catalogue fournisseur appartient à SERVICE ACHAT › CATALOGUE FOURNISSEURS."},
+  {id:"t3",name:"Promotion_Montures_Automne.pdf",kind:"Offre commerciale",icon:"📄",target:"achat-promos",why:"L'offre promotionnelle est classée dans SERVICE ACHAT › OFFRES PROMOTIONNELLES."},
+  {id:"t4",name:"Diaporama_Service_Communication.pptx",kind:"Présentation",icon:"📊",target:"diapo-com",why:"Le diaporama explicatif du service communication va dans DIAPORAMA DES SERVICES › DEROULEMENT DU SERVICE COMMUNICATION."},
+  {id:"t5",name:"Modele_Fiche_Patient.docx",kind:"Modèle Word",icon:"📝",target:"medical-modeles",why:"Un modèle utilisé au cabinet médical va dans CABINET MEDICAL › MODELES."},
+  {id:"t6",name:"Dossier_Patient_Exemple.pdf",kind:"Dossier patient fictif",icon:"📁",target:"medical-dossiers",why:"Le dossier patient fictif va dans CABINET MEDICAL › DOSSIERS PATIENTS."}
 ];
 const examItems = [
-  {id:"e1",name:"Commande_CLI-103_Martin.pdf",kind:"PDF",icon:"📄",target:"clients-commandes"},
-  {id:"e2",name:"Facture_CLIENT_2026-081.pdf",kind:"PDF",icon:"📄",target:"clients-factures"},
-  {id:"e3",name:"Reclamation_Dupont.eml",kind:"Courriel",icon:"✉️",target:"clients-reclamations"},
-  {id:"e4",name:"Devis_MontagnePro_Septembre.xlsx",kind:"Excel",icon:"📊",target:"fournisseurs-devis"},
-  {id:"e5",name:"Facture_Fournisseur_AlpSports_4591.pdf",kind:"PDF",icon:"📄",target:"fournisseurs-factures"},
-  {id:"e6",name:"Contrat_CDD_Emma_Roux.pdf",kind:"PDF",icon:"👤",target:"rh-contrats"},
-  {id:"e7",name:"Planning_Equipe_Vente_S42.xlsx",kind:"Excel",icon:"📊",target:"rh-plannings"},
-  {id:"e8",name:"Photo_Nouvelle_Vitrine.png",kind:"Image",icon:"🖼️",target:"com-images"},
-  {id:"e9",name:"Dossier_Photos_Trail_Courchevel",kind:"Dossier",icon:"📁",target:"com-images"},
-  {id:"e10",name:"Post_Instagram_Randonnee.docx",kind:"Word",icon:"📝",target:"com-reseaux"},
-  {id:"e11",name:"Courrier_Mairie_Chambery.docx",kind:"Word",icon:"📝",target:"admin-courriers"},
-  {id:"e12",name:"Procedure_Fermeture_Magasin.pdf",kind:"PDF",icon:"📘",target:"admin-procedures"},
-  {id:"e13",name:"Facture_Client_2024-019.pdf",kind:"PDF ancien",icon:"🗄️",target:"archives"},
-  {id:"e14",name:"Brochure_Collection_2023.pdf",kind:"Document ancien",icon:"🗄️",target:"archives"}
+  {id:"e1",name:"FA00002394.pdf",kind:"Facture du 12/10/2026",icon:"📄",target:"vente-octobre"},
+  {id:"e2",name:"FA00002381.pdf",kind:"Facture du 15/09/2026",icon:"📄",target:"vente-septembre"},
+  {id:"e3",name:"Catalogue_Fournisseur_Verres.pdf",kind:"Catalogue",icon:"📄",target:"achat-catalogue"},
+  {id:"e4",name:"Catalogue_Fournisseur_Montures.pdf",kind:"Catalogue",icon:"📄",target:"achat-catalogue"},
+  {id:"e5",name:"Offre_Promotionnelle_Octobre.pdf",kind:"Promotion",icon:"📄",target:"achat-promos"},
+  {id:"e6",name:"Remise_Fournisseur_Automne.pdf",kind:"Promotion",icon:"📄",target:"achat-promos"},
+  {id:"e7",name:"Diaporama_Service_Achat.pptx",kind:"Présentation",icon:"📊",target:"diapo-achat"},
+  {id:"e8",name:"Diaporama_Service_Communication.pptx",kind:"Présentation",icon:"📊",target:"diapo-com"},
+  {id:"e9",name:"Diaporama_Service_Comptabilite.pptx",kind:"Présentation",icon:"📊",target:"diapo-compta"},
+  {id:"e10",name:"Diaporama_Service_GRH.pptx",kind:"Présentation",icon:"📊",target:"diapo-grh"},
+  {id:"e11",name:"Modele_Compte_Rendu_Consultation.docx",kind:"Modèle",icon:"📝",target:"medical-modeles"},
+  {id:"e12",name:"Modele_Fiche_Patient.docx",kind:"Modèle",icon:"📝",target:"medical-modeles"},
+  {id:"e13",name:"Dossier_Patient_Fictif_A.pdf",kind:"Dossier fictif",icon:"📄",target:"medical-dossiers"},
+  {id:"e14",name:"Dossier_Patient_Fictif_B.pdf",kind:"Dossier fictif",icon:"📄",target:"medical-dossiers"}
 ];
 
 let selectedTraining = null;
